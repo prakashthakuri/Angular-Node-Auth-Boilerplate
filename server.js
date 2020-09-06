@@ -1,8 +1,12 @@
 var express = require('express')
 var app = express()
 
-app.get('/', (req, res) => {
-    res.send('Hello')
+
+ var messages =[{text: 'some text', owner: 'Tome'},
+              {text: 'Other Messages', owner: 'Jane'}            
+]
+app.get('/messages', (req, res) => {
+    res.json(messages)
 })
 
 app.listen(3000)
